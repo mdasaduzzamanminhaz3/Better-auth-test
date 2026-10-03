@@ -21,13 +21,24 @@ const Navbar = () => {
         <Link href="/services">Services</Link>
       </li>
       <li>
-        <Link href="/dashboard" className="font-medium text-accent" aria-current="page">
+        <Link
+          href="/dashboard"
+          className="font-medium text-accent"
+          aria-current="page"
+        >
           Dashboard
         </Link>
       </li>
- {session?.user &&     <li>
-        <Link href="/profile">Profile</Link>
-      </li>}
+      {session?.user && (
+        <>
+          <li>
+            <Link href="/profile">Profile</Link>
+          </li>
+          <li>
+            <Link href="/settings">Settings</Link>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -83,7 +94,9 @@ const Navbar = () => {
             </svg>
           </button>
           <div className="flex items-center gap-3">
-            <Link href="/" className="font-bold">ACME</Link>
+            <Link href="/" className="font-bold">
+              ACME
+            </Link>
           </div>
         </div>
         <ul className="hidden items-center gap-4 md:flex">{links}</ul>
