@@ -70,6 +70,7 @@ const SignInPage = () => {
             Submit
           </Button>
       </Form>
+      did you forget your password? <a href="/forgot-password" className="text-blue-500">forgot password</a>
     </div>
   );
 };
