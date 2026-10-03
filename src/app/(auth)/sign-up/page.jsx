@@ -25,8 +25,12 @@ const SignUpPage = () => {
     console.log("After google signIn",resData);
   }
 
-
-
+  const handleGitHubSignIn = async () => {
+    const resData = await signIn.social({
+      provider: "github"
+    })
+    console.log("After github signIn",resData);
+  }
 
      const [isVisible, setIsVisible] = useState(false);
 
@@ -90,7 +94,10 @@ const SignUpPage = () => {
         </Button>
     </Form>
         <p>or</p>
+        <div className="flex flex-col gap-2">
         <Button onClick={handleGoogleSignIn}>Sign up with Google</Button>
+        <Button onClick={handleGitHubSignIn}>Sign up with GitHub</Button>
+        </div>
         </div>
 
     );
